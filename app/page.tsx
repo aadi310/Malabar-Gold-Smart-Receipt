@@ -274,11 +274,11 @@ export default function Home() {
     {
       id: "current",
       date: "07-11-2025",
-      branch: "KFC",
-      amount: currentReceiptId === "current" ? receipts.current.subtotal + receipts.current.tax : 537.00,
+      branch: "Malabar - MG Road, Bangalore",
+      amount: currentReceiptId === "current" ? receipts.current.subtotal + receipts.current.tax : 126034.00,
     },
-    { id: "hist1", date: "20-10-2025", branch: "KFC", amount: 767.00 },
-    { id: "hist2", date: "15-10-2025", branch: "KFC", amount: 597.00 },
+    { id: "hist1", date: "20-10-2025", branch: "Malabar - MG Road, Bangalore", amount: 179121.00 },
+    { id: "hist2", date: "15-10-2025", branch: "Malabar - MG Road, Bangalore", amount: 255062.00 },
   ]
 
   const toggleProductExpansion = (productId: number) => {
@@ -409,21 +409,22 @@ export default function Home() {
   }
 
   const handleEmailReceipt = () => {
-    window.open(`mailto:?subject=Receipt from KFC India&body=Receipt ID: ${currentReceipt.id}`)
+    window.open(`mailto:?subject=Receipt from Malabar Gold & Diamonds&body=Receipt ID: ${currentReceipt.id}`)
   }
 
   const handleDownloadReceipt = () => {
     const receiptContent = `
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KFC India Receipt</title>
+<title>Malabar Gold & Diamonds Receipt</title>
 
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
 
-body {
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
 font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
 font-size:14px;
 line-height:1.4;
@@ -434,27 +435,28 @@ margin:0 auto;
 padding:20px;
 }
 
+/* HEADER */
+
 .receipt-header{
 display:flex;
 justify-content:space-between;
 align-items:flex-start;
 margin-bottom:30px;
 padding-bottom:20px;
-border-bottom:3px solid #E4002B;
+border-bottom:3px solid #CE187D;
 }
 
 .company-info h1{
-font-size:32px;
-color:#E4002B;
+font-size:30px;
+color:#682A49;
 font-weight:900;
-margin-bottom:4px;
-font-style:italic;
+margin-bottom:6px;
 }
 
 .company-info p{
 font-size:12px;
-color:#333;
-line-height:1.3;
+color:#444;
+line-height:1.4;
 font-weight:500;
 }
 
@@ -469,19 +471,21 @@ margin-bottom:4px;
 
 .bill-id{
 font-weight:bold;
-color:#E4002B;
+color:#CE187D;
 }
 
+/* CUSTOMER */
+
 .customer-section{
-background:#fff5f5;
+background:#F7F2F5;
 padding:15px;
 margin-bottom:20px;
-border-left:4px solid #E4002B;
+border-left:4px solid #CE187D;
 border-radius:0 8px 8px 0;
 }
 
 .customer-section h3{
-color:#E4002B;
+color:#682A49;
 font-size:16px;
 margin-bottom:2px;
 font-weight:700;
@@ -493,6 +497,8 @@ font-weight:500;
 color:#555;
 }
 
+/* TABLE */
+
 .items-table{
 width:100%;
 border-collapse:collapse;
@@ -500,7 +506,7 @@ margin-bottom:20px;
 }
 
 .items-table th{
-background:#E4002B;
+background:#CE187D;
 color:white;
 padding:12px 8px;
 text-align:left;
@@ -512,7 +518,7 @@ letter-spacing:0.5px;
 
 .items-table td{
 padding:12px 8px;
-border-bottom:1px solid #f0f0f0;
+border-bottom:1px solid #eee;
 font-size:12px;
 vertical-align:top;
 }
@@ -525,27 +531,21 @@ font-size:13px;
 
 .item-desc{
 font-size:11px;
-color:#666;
+color:#777;
 }
 
-.item-specs{
-font-size:10px;
-color:#E4002B;
-margin-top:4px;
-font-weight:600;
-text-transform:uppercase;
-}
+/* TOTALS */
 
 .totals-section{
 display:flex;
 justify-content:space-between;
-margin-bottom:20px;
+margin-bottom:25px;
 padding:0 10px;
 }
 
 .totals-table{
 text-align:right;
-min-width:200px;
+min-width:220px;
 }
 
 .totals-table div{
@@ -556,11 +556,43 @@ font-size:13px;
 .net-total{
 font-weight:800;
 font-size:18px;
-color:#E4002B;
-border-top:2px solid #E4002B;
+color:#CE187D;
+border-top:2px solid #CE187D;
 padding-top:8px;
 margin-top:8px;
 }
+
+/* PAYMENT */
+
+.payment-box{
+background:#F7F2F5;
+border:1px solid #ecd9e4;
+padding:14px;
+border-radius:10px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-top:10px;
+}
+
+.payment-title{
+font-weight:700;
+font-size:13px;
+color:#333;
+}
+
+.payment-sub{
+font-size:11px;
+color:#777;
+}
+
+.payment-amount{
+font-weight:800;
+font-size:16px;
+color:#000;
+}
+
+/* FOOTER */
 
 .footer{
 text-align:center;
@@ -572,7 +604,7 @@ color:#444;
 }
 
 .footer strong{
-color:#E4002B;
+color:#682A49;
 }
 
 .powered-by{
@@ -595,29 +627,30 @@ body{-webkit-print-color-adjust:exact;width:100%;padding:0;}
 <div class="receipt-header">
 
 <div class="company-info">
-<h1>KFC</h1>
+
+<h1>Malabar Gold & Diamonds</h1>
 
 <p>
-<strong>KFC India</strong><br>
-Restaurant operated by Devyani International Ltd<br>
-Sector 44, Gurugram, Haryana 122003<br>
-GSTIN: 06AACCD5295M1Z3
+<strong>Malabar Gold & Diamonds</strong><br>
+No 52, opposite Metro Station MG Road<br>
+Bengaluru, Karnataka 560001<br>
+India
 </p>
 
 </div>
 
 <div class="bill-info">
-<div><strong>Receipt ID:</strong> <span class="bill-id">KFC-IN-DEL-71922864</span></div>
-<div><strong>Date:</strong> 07-11-2026 19:22:18</div>
-<div><strong>Counter Associate:</strong> Rahul Verma</div>
+<div><strong>Receipt ID:</strong> <span class="bill-id">MGD-IN-BLR-71922864</span></div>
+<div><strong>Date:</strong> 07-11-2026 19:22</div>
+<div><strong>Sales Associate:</strong> Rahul Verma</div>
 </div>
 
 </div>
 
 
 <div class="customer-section">
-<h3>Guest: ${customerName}</h3>
-<p>Thank you for visiting KFC India.</p>
+<h3>Customer: ${customerName}</h3>
+<p>Thank you for shopping with Malabar Gold & Diamonds.</p>
 </div>
 
 
@@ -625,11 +658,10 @@ GSTIN: 06AACCD5295M1Z3
 
 <thead>
 <tr>
-<th style="width:50%">Menu Item</th>
+<th style="width:55%">Jewellery Item</th>
 <th style="width:10%">Qty</th>
-<th style="width:15%">Size</th>
-<th style="width:12%">Price</th>
-<th style="width:13%">Total</th>
+<th style="width:15%">Category</th>
+<th style="width:20%">Amount</th>
 </tr>
 </thead>
 
@@ -637,54 +669,53 @@ GSTIN: 06AACCD5295M1Z3
 
 <tr>
 <td>
-<div class="item-name">2 Pc Hot & Crispy Chicken Meal</div>
-<div class="item-desc">2 Pc Hot & Crispy Chicken, Fries, Pepsi</div>
-<div class="item-specs">Type: Hot & Crispy</div>
+<div class="item-name">Stately Viridescent Generic Gold Necklace</div>
+<div class="item-desc">Premium handcrafted gold necklace</div>
 </td>
 <td>1</td>
-<td>Regular</td>
-<td>₹229</td>
-<td><strong>₹229</strong></td>
+<td>Necklace</td>
+<td><strong>₹81,998.00</strong></td>
 </tr>
 
 <tr>
 <td>
-<div class="item-name">Zinger Burger</div>
-<div class="item-desc">Signature spicy chicken fillet burger with lettuce & mayo</div>
-<div class="item-specs">Flavor: Spicy</div>
+<div class="item-name">Avant-garde Gold Earrings</div>
+<div class="item-desc">Designer gold earrings set</div>
 </td>
 <td>1</td>
-<td>Single Patty</td>
-<td>₹199</td>
-<td><strong>₹199</strong></td>
-</tr>
-
-<tr>
-<td>
-<div class="item-name">French Fries</div>
-<div class="item-desc">Golden crispy salted fries</div>
-<div class="item-specs">Size: Regular</div>
-</td>
-<td>1</td>
-<td>Regular</td>
-<td>₹109</td>
-<td><strong>₹109</strong></td>
+<td>Earrings</td>
+<td><strong>₹44,036.00</strong></td>
 </tr>
 
 </tbody>
+
 </table>
 
 
 <div class="totals-section">
 
 <div>
-Items Ordered: 3
+Items Purchased: 2
 </div>
 
 <div class="totals-table">
-<div>Subtotal: <strong>₹537</strong></div>
-<div>GST (5%): <strong>₹25.57</strong></div>
-<div class="net-total">Total Paid: <strong>₹562.57</strong></div>
+<div>Subtotal: <strong>₹120,463.59</strong></div>
+<div>GST (3%): <strong>₹3,670.90</strong></div>
+<div class="net-total">Total Paid: <strong>₹126,034.00</strong></div>
+</div>
+
+</div>
+
+
+<div class="payment-box">
+
+<div>
+<div class="payment-title">UPI PAYMENT</div>
+<div class="payment-sub">Paid via Google Pay</div>
+</div>
+
+<div class="payment-amount">
+₹126,034.00
 </div>
 
 </div>
@@ -692,9 +723,9 @@ Items Ordered: 3
 
 <div class="footer">
 
-<p><strong>Thank you for dining with KFC India!</strong></p>
+<p><strong>Thank you for shopping with Malabar Gold & Diamonds!</strong></p>
 
-<p>Order again at www.online.kfc.co.in</p>
+<p>Visit again at www.malabargoldanddiamonds.com</p>
 
 <div class="powered-by">
 Powered by RDEP
@@ -709,7 +740,7 @@ Powered by RDEP
     const url = URL.createObjectURL(blob)
     const link = document.createElement("a")
     link.href = url
-    link.download = "KFC_Receipt_SK251107001.html"
+    link.download = "MalabarG&D_Receipt_SK251107001.html"
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
@@ -1948,7 +1979,7 @@ Powered by RDEP
 
               <div className="flex-grow text-left">
                 <div className="font-bold text-sm text-gray-900 leading-none mb-1">
-                  Malabar Gold & Diamonds
+                  Malabar G & D
                 </div>
 
                 <div className="text-gray-400 text-[11px] font-medium uppercase tracking-tighter">
