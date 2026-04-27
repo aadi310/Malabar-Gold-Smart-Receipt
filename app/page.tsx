@@ -1594,84 +1594,90 @@ Powered by RDEP
 
 </div>
           
-          {/* Receipt Actions (2) */}
-<div className="bg-white rounded-lg border border-gray-200 p-3 font-poppins">
+         {/* Receipt Actions */}
+<div className="bg-white rounded-xl border border-[#ecd9e4] p-3 font-poppins shadow-sm">
   <div className="flex justify-center space-x-4">
+
     <Button
       ref={historyButtonRef}
       variant="ghost"
       size="sm"
-      className="text-[#E4002B] hover:bg-red-50 font-medium"
+      className="text-[#CE187D] hover:bg-[#F7F2F5] font-medium"
       onClick={handleTransactionHistoryOpen}
     >
       <History className="h-4 w-4 mr-1" />
       <span className="text-xs">History</span>
     </Button>
-    
-    <Button 
-      variant="ghost" 
-      size="sm" 
-      className="text-[#E4002B] hover:bg-red-50 font-medium" 
+
+    <Button
+      variant="ghost"
+      size="sm"
+      className="text-[#CE187D] hover:bg-[#F7F2F5] font-medium"
       onClick={handleEmailReceipt}
     >
       <Mail className="h-4 w-4 mr-1" />
       <span className="text-xs">Email</span>
     </Button>
-    
+
     <Button
       variant="ghost"
       size="sm"
-      className="text-[#E4002B] hover:bg-red-50 font-medium"
+      className="text-[#CE187D] hover:bg-[#F7F2F5] font-medium"
       onClick={handleDownloadReceipt}
     >
       <Download className="h-4 w-4 mr-1" />
       <span className="text-xs">Download</span>
     </Button>
+
   </div>
 </div>
+          
           {/* Need Help */}
-<div className="bg-white rounded-lg border border-gray-200 p-3 font-poppins">
-  <h3 className="text-sm font-semibold text-[#E4002B] mb-3 flex items-center">
-    <Send className="mr-2 h-4 w-4" />
+<div className="bg-white rounded-xl border border-[#ecd9e4] p-3 font-poppins shadow-sm">
+  <h3 className="text-sm font-semibold text-[#682A49] mb-3 flex items-center">
+    <Send className="mr-2 h-4 w-4 text-[#CE187D]" />
     Need Help?
   </h3>
+
   <div className="grid grid-cols-3 gap-2">
+
     {/* WhatsApp / Chat */}
     <button
       onClick={handleWhatsApp}
-      className="bg-gray-50 border border-gray-100 rounded-lg p-2 flex flex-col items-center hover:bg-red-50 transition-colors group"
+      className="bg-[#F7F2F5] border border-[#ecd9e4] rounded-lg p-2 flex flex-col items-center hover:bg-[#F1E6EC] transition-colors group"
     >
-      <MessageSquare className="h-4 w-4 text-gray-600 group-hover:text-[#E4002B] mb-1" />
+      <MessageSquare className="h-4 w-4 text-gray-600 group-hover:text-[#CE187D] mb-1" />
       <span className="text-[11px] font-medium text-gray-700">Chat</span>
     </button>
 
     {/* Call Support */}
     <button
       onClick={handleCall}
-      className="bg-gray-50 border border-gray-100 rounded-lg p-2 flex flex-col items-center hover:bg-red-50 transition-colors group"
+      className="bg-[#F7F2F5] border border-[#ecd9e4] rounded-lg p-2 flex flex-col items-center hover:bg-[#F1E6EC] transition-colors group"
     >
-      <Phone className="h-4 w-4 text-gray-600 group-hover:text-[#E4002B] mb-1" />
+      <Phone className="h-4 w-4 text-gray-600 group-hover:text-[#CE187D] mb-1" />
       <span className="text-[11px] font-medium text-gray-700">Call</span>
     </button>
 
     {/* Email Support */}
     <button
       onClick={handleEmail}
-      className="bg-gray-50 border border-gray-100 rounded-lg p-2 flex flex-col items-center hover:bg-red-50 transition-colors group"
+      className="bg-[#F7F2F5] border border-[#ecd9e4] rounded-lg p-2 flex flex-col items-center hover:bg-[#F1E6EC] transition-colors group"
     >
-      <Mail className="h-4 w-4 text-gray-600 group-hover:text-[#E4002B] mb-1" />
+      <Mail className="h-4 w-4 text-gray-600 group-hover:text-[#CE187D] mb-1" />
       <span className="text-[11px] font-medium text-gray-700">Email</span>
     </button>
+
   </div>
 </div>
-
+          
       {/* Social Media & Store Address */}
-<div className="bg-white rounded-lg border border-gray-200 p-3 font-poppins">
+<div className="bg-white rounded-xl border border-[#ecd9e4] p-3 font-poppins">
 
   <div className="flex justify-center space-x-6 mb-3">
 
     <button
-      onClick={() => handleSocialLink("https://www.instagram.com/kfcindia_official/")}
+      onClick={() => handleSocialLink("https://www.instagram.com/malabargoldanddiamonds/?hl=en")}
       className="flex flex-col items-center"
     >
       <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 flex items-center justify-center mb-1">
@@ -1681,7 +1687,7 @@ Powered by RDEP
     </button>
 
     <button
-      onClick={() => handleSocialLink("https://www.facebook.com/KFCIndia")}
+      onClick={() => handleSocialLink("https://www.facebook.com/malabargoldanddiamonds/")}
       className="flex flex-col items-center"
     >
       <div className="w-8 h-8 rounded-full bg-[#1877F2] flex items-center justify-center mb-1">
@@ -1691,10 +1697,10 @@ Powered by RDEP
     </button>
 
     <button
-      onClick={() => handleSocialLink("https://online.kfc.co.in")}
+      onClick={() => handleSocialLink("https://www.malabargoldanddiamonds.com/")}
       className="flex flex-col items-center"
     >
-      <div className="w-8 h-8 rounded-full bg-[#E4002B] flex items-center justify-center mb-1">
+      <div className="w-8 h-8 rounded-full bg-[#CE187D] flex items-center justify-center mb-1">
         <ExternalLink className="h-4 w-4 text-white" />
       </div>
       <span className="text-xs font-medium">Website</span>
@@ -1704,15 +1710,15 @@ Powered by RDEP
 
 
   {/* Collapsible Store Location */}
-  <div className="text-xs text-gray-600 text-center mb-3 bg-gray-50 p-3 rounded-lg">
+  <div className="text-xs text-gray-600 text-center mb-3 bg-[#F7F2F5] p-3 rounded-lg">
 
     <button
       onClick={() => setShowStoreLocation(!showStoreLocation)}
-      className="w-full flex items-center justify-center mb-2 hover:text-[#E4002B] transition-colors"
+      className="w-full flex items-center justify-center mb-2 hover:text-[#CE187D] transition-colors"
     >
-      <MapPin className="h-3 w-3 mr-1 text-[#E4002B]" />
-      <span className="font-semibold text-[#E4002B]">
-        KFC India Corporate Office {showStoreLocation ? "▲" : "▼"}
+      <MapPin className="h-3 w-3 mr-1 text-[#CE187D]" />
+      <span className="font-semibold text-[#682A49]">
+        Malabar Gold & Diamonds Store {showStoreLocation ? "▲" : "▼"}
       </span>
     </button>
 
@@ -1720,19 +1726,19 @@ Powered by RDEP
       <div className="space-y-0.5">
 
         <p className="font-bold text-gray-900">
-          Devyani International Ltd (KFC India)
+          Malabar Gold & Diamonds
         </p>
 
-        <p>Plot No. 31, Sector 44</p>
-        <p>Gurugram, Haryana 122003</p>
+        <p>No 52, opposite Metro Station MG Road</p>
+        <p>Bengaluru, Karnataka 560001</p>
         <p>India</p>
 
         <p className="mt-2 text-[10px]">
-          GSTIN: 06AACCD5295M1Z3
+          GSTIN: 29AACCM5471H1Z9
         </p>
 
-        <p className="mt-1 text-[#E4002B] font-semibold">
-          Manager on Duty: {currentReceipt.associate}
+        <p className="mt-1 text-[#CE187D] font-semibold">
+          Sales Associate: {currentReceipt.associate}
         </p>
 
       </div>
@@ -1745,7 +1751,7 @@ Powered by RDEP
   <Button
     variant="ghost"
     size="sm"
-    className="w-full text-xs text-gray-500 hover:text-[#E4002B] h-6 font-medium"
+    className="w-full text-xs text-gray-500 hover:text-[#CE187D] h-6 font-medium"
     onClick={() => setShowTerms(!showTerms)}
   >
     Terms & Conditions {showTerms ? "▲" : "▼"}
@@ -1754,20 +1760,20 @@ Powered by RDEP
   {showTerms && (
     <div className="text-[11px] text-gray-500 mt-2 space-y-1 px-2 font-medium">
 
-      <p>• Rewards points valid for 6 months from issue date.</p>
+      <p>• All jewellery purchases include applicable GST as per Indian regulations.</p>
 
-      <p>• Prices include applicable GST as per Indian regulations.</p>
+      <p>• Diamond jewellery is certified as per Malabar quality standards.</p>
 
-      <p>• Offers may vary by city and restaurant location.</p>
+      <p>• Lifetime maintenance services available at Malabar stores.</p>
 
-      <p>• © KFC India. All rights reserved.</p>
+      <p>• © Malabar Gold & Diamonds. All rights reserved.</p>
 
     </div>
   )}
 
 
   {/* Powered by RDEP */}
-  <div className="text-center mt-2 pt-2 border-t border-gray-100">
+  <div className="text-center mt-2 pt-2 border-t border-[#ecd9e4]">
 
     <div className="flex items-center justify-center space-x-1">
 
@@ -1887,19 +1893,19 @@ Powered by RDEP
     />
 
     {/* Modal */}
-    <div className="relative bg-white rounded-lg w-full max-w-sm overflow-hidden shadow-2xl border border-gray-100 font-poppins">
+    <div className="relative bg-white rounded-xl w-full max-w-sm overflow-hidden shadow-2xl border border-[#ecd9e4] font-poppins">
 
       {/* Header */}
-      <div className="flex justify-between items-center p-4 bg-[#E4002B] text-white">
+      <div className="flex justify-between items-center p-4 bg-[#CE187D] text-white">
         <h3 className="text-base font-bold flex items-center uppercase tracking-tight">
           <History className="h-5 w-5 mr-2" />
-          Order History
+          Purchase History
         </h3>
 
         <Button
           variant="ghost"
           size="icon"
-          className="h-8 w-8 text-white hover:bg-[#c30025] rounded-full"
+          className="h-8 w-8 text-white hover:bg-[#B7156D] rounded-full"
           onClick={() => setShowTransactionHistory(false)}
         >
           <svg
@@ -1921,7 +1927,7 @@ Powered by RDEP
       </div>
 
       {/* Transaction List */}
-      <div className="max-h-80 overflow-y-auto p-3 bg-gray-50/50">
+      <div className="max-h-80 overflow-y-auto p-3 bg-[#F7F2F5]">
         <div className="space-y-2">
 
           {transactionHistory.map((transaction) => (
@@ -1933,16 +1939,16 @@ Powered by RDEP
                 setShowTransactionHistory(false)
                 window.scrollTo({ top: 0, behavior: "smooth" })
               }}
-              className="w-full flex items-center p-3 bg-white border border-gray-200 rounded-xl shadow-sm hover:border-[#E4002B] transition-all cursor-pointer group"
+              className="w-full flex items-center p-3 bg-white border border-[#ecd9e4] rounded-xl shadow-sm hover:border-[#CE187D] transition-all cursor-pointer group"
             >
 
-              <div className="bg-red-50 p-2 rounded-lg mr-3 group-hover:bg-[#E4002B] transition-colors">
-                <FileText className="h-5 w-5 text-[#E4002B] group-hover:text-white" />
+              <div className="bg-[#F7F2F5] p-2 rounded-lg mr-3 group-hover:bg-[#CE187D] transition-colors">
+                <FileText className="h-5 w-5 text-[#CE187D] group-hover:text-white" />
               </div>
 
               <div className="flex-grow text-left">
                 <div className="font-bold text-sm text-gray-900 leading-none mb-1">
-                  KFC
+                  Malabar Gold & Diamonds
                 </div>
 
                 <div className="text-gray-400 text-[11px] font-medium uppercase tracking-tighter">
@@ -1950,7 +1956,7 @@ Powered by RDEP
                 </div>
               </div>
 
-              <div className="font-bold text-[#E4002B]">
+              <div className="font-bold text-[#CE187D]">
                 ₹{transaction.amount.toFixed(2)}
               </div>
 
@@ -1962,9 +1968,9 @@ Powered by RDEP
       </div>
 
       {/* Footer */}
-      <div className="p-3 border-t bg-white">
+      <div className="p-3 border-t border-[#ecd9e4] bg-white">
         <Button
-          className="w-full bg-gray-900 hover:bg-black text-white font-bold h-10 rounded-xl transition-all"
+          className="w-full bg-[#682A49] hover:bg-[#4f1f36] text-white font-bold h-10 rounded-xl transition-all"
           onClick={() => setShowTransactionHistory(false)}
         >
           Close History
