@@ -1187,66 +1187,88 @@ Powered by RDEP
           
           {/* Full Width Banner Section */}
 <div className="bg-white rounded-lg border border-gray-200 overflow-hidden font-poppins relative">
-  <Carousel 
-    className="w-full" 
+  <Carousel
+    className="w-full"
     setApi={setPromoApi}
     opts={{
       loop: true,
     }}
   >
     <CarouselContent>
-      {/* Banner 1: Junior Party */}
+
+      {/* Banner 1 */}
       <CarouselItem>
-        <a 
-          href="https://online.kfc.co.in/" 
-          target="_blank" 
+        <a
+          href="https://www.malabargoldanddiamonds.com/in/pan-india/en/product-list.html?search=tanvika"
+          target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="relative w-full aspect-[2/1]">
+          <div className="relative w-full aspect-[1440/650]">
             <Image
-              src="https://cdn4.singleinterface.com/files/enterprise/coverphoto/34404/Taste-the-Epic-Banner-14-11-24-02-59-58.jpg"
-              alt="KFC Junior Party"
+              src="/images/design-mode/malabar-banner-1.png"
+              alt="Malabar Tanvika Collection"
               fill
-              className="object-contain" // Prevents cutting/cropping
+              className="object-cover"
               priority
             />
           </div>
         </a>
       </CarouselItem>
 
-      {/* Banner 2: Double Dip */}
+      {/* Banner 2 */}
       <CarouselItem>
-        <a 
-          href="https://online.kfc.co.in/" 
-          target="_blank" 
+        <a
+          href="https://www.malabargoldanddiamonds.com/in/pan-india/en/product-list/necklace.html?malabar_category=2076&malabar_product_type=72"
+          target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="relative w-full aspect-[2/1]">
+          <div className="relative w-full aspect-[1440/650]">
             <Image
-              src="https://static.kfc.com.sg/images/web/lg/KFC_DouDip.jpg?v=0.1"
-              alt="KFC Double Dip"
+              src="/images/design-mode/malabar-banner-2.png"
+              alt="Malabar Necklace Collection"
               fill
-              className="object-contain" // Prevents cutting/cropping
+              className="object-cover"
             />
           </div>
         </a>
       </CarouselItem>
+
+      {/* Banner 3 */}
+      <CarouselItem>
+        <a
+          href="https://www.malabargoldanddiamonds.com/in/pan-india/en/product-list.html?malabar_category=2076"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="relative w-full aspect-[1440/650]">
+            <Image
+              src="/images/design-mode/malabar-banner-3.png"
+              alt="Malabar Jewellery Collection"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </a>
+      </CarouselItem>
+
     </CarouselContent>
 
     {/* Dots Navigation */}
     <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1.5 z-10">
-      {[0, 1].map((index) => (
+      {[0, 1, 2].map((index) => (
         <button
           key={index}
           onClick={() => promoApi?.scrollTo(index)}
           className={`h-1.5 rounded-full transition-all duration-300 ${
-            currentSlide === index ? "w-5 bg-[#E4002B]" : "w-1.5 bg-gray-300"
+            currentSlide === index ? "w-5 bg-[#D4AF37]" : "w-1.5 bg-gray-300"
           }`}
         />
       ))}
     </div>
+
   </Carousel>
 </div>
+          
          {/* Profile Update Section */}
 <div className="bg-white rounded-lg border border-gray-200 p-4 font-poppins">
   {profileUpdateSuccess ? (
