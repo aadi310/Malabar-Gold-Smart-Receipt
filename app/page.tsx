@@ -1075,6 +1075,89 @@ Powered by RDEP
   </div>
 
 </div>
+
+          {/* Customer Experience Feedback */}
+<div className="bg-white rounded-xl border border-[#ecd9e4] p-4 font-poppins shadow-sm">
+  {feedbackSubmitted ? (
+    <div className="text-center py-6 bg-[#F7F2F5] rounded-xl border border-[#ecd9e4]">
+      <div className="w-12 h-12 bg-[#CE187D] rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg shadow-pink-100">
+        <ThumbsUp className="h-6 w-6 text-white" />
+      </div>
+
+      <div className="text-sm font-bold text-[#682A49] mb-1">
+        Thank You for Your Feedback!
+      </div>
+
+      <div className="text-xs font-medium text-gray-500">
+        Your feedback helps us improve your next shopping experience.
+      </div>
+    </div>
+  ) : (
+    <div className="space-y-4">
+
+      <div className="flex items-center justify-between">
+        <h3 className="text-base font-semibold text-[#682A49]">
+          Rate Your Experience
+        </h3>
+
+        <span className="text-[10px] font-bold text-[#CE187D] bg-[#F7F2F5] px-2 py-1 rounded">
+          CUSTOMER FEEDBACK
+        </span>
+      </div>
+
+      {/* Star Rating */}
+      <div className="flex justify-center gap-3 py-2">
+        {[1, 2, 3, 4, 5].map((star) => (
+          <button
+            key={star}
+            onClick={() => setRating(star)}
+            className="transition-transform active:scale-90"
+          >
+            <Star
+              className={`h-8 w-8 ${
+                star <= rating
+                  ? "fill-[#CE187D] text-[#CE187D]"
+                  : "text-gray-200"
+              }`}
+            />
+          </button>
+        ))}
+      </div>
+
+      {/* Feedback Text */}
+      <div className="space-y-2">
+        <Label
+          htmlFor="comments"
+          className="text-[11px] font-bold text-gray-400 uppercase tracking-tight ml-1"
+        >
+          Tell us more (Optional)
+        </Label>
+
+        <textarea
+          id="comments"
+          rows={3}
+          placeholder="How was your in-store experience and service today?"
+          className="w-full p-3 text-xs border border-[#ecd9e4] rounded-xl focus:ring-1 focus:ring-[#C92C83] focus:border-[#C92C83] outline-none transition-all resize-none"
+          value={feedbackText}
+          onChange={(e) => setFeedbackText(e.target.value)}
+        />
+      </div>
+
+      <Button
+        className="w-full bg-gradient-to-r from-[#CE187D] to-[#682A49] hover:opacity-90 text-white h-10 text-xs font-bold rounded-xl transition-all"
+        onClick={handleFeedbackSubmit}
+        disabled={!rating}
+      >
+        Submit Feedback
+      </Button>
+
+      <p className="text-[10px] text-center text-gray-400 font-medium">
+        Your feedback helps us serve you better.
+      </p>
+
+    </div>
+  )}
+</div>
           
           {/* Malabar Privilege Rewards */}
 <div className="bg-white rounded-lg border border-[#ecd9e4] p-3 font-poppins">
@@ -1404,187 +1487,110 @@ Powered by RDEP
 
 </div>
           
-          {/* Quick Actions - Feedback Section */}
-<div className="bg-white rounded-lg border border-gray-200 p-4 font-poppins">
-  {feedbackSubmitted ? (
-    <div className="text-center py-6 bg-gray-50 rounded-xl border border-dashed border-gray-200">
-      <div className="w-12 h-12 bg-[#E4002B] rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg shadow-red-100">
-        <ThumbsUp className="h-6 w-6 text-white" />
-      </div>
-
-      <div className="text-sm font-bold text-gray-900 mb-1">
-        Thank You for Your Feedback!
-      </div>
-
-      <div className="text-xs font-medium text-gray-500">
-        Your response helps us improve your next visit.
-      </div>
-    </div>
-  ) : (
-    <div className="space-y-4">
-      <div className="flex items-center justify-between">
-        <h3 className="text-base font-semibold text-gray-900">Rate Your Experience</h3>
-
-        <span className="text-[10px] font-bold text-[#E4002B] bg-red-50 px-2 py-1 rounded">
-          CUSTOMER FEEDBACK
-        </span>
-      </div>
-
-      {/* Star Rating Selection */}
-      <div className="flex justify-center gap-3 py-2">
-        {[1, 2, 3, 4, 5].map((star) => (
-          <button
-            key={star}
-            onClick={() => setRating(star)}
-            className="transition-transform active:scale-90"
-          >
-            <Star
-              className={`h-8 w-8 ${
-                star <= rating ? "fill-[#E4002B] text-[#E4002B]" : "text-gray-200"
-              }`}
-            />
-          </button>
-        ))}
-      </div>
-
-      {/* Inline Feedback Box */}
-      <div className="space-y-2">
-        <Label
-          htmlFor="comments"
-          className="text-[11px] font-bold text-gray-400 uppercase tracking-tight ml-1"
-        >
-          Tell us more (Optional)
-        </Label>
-
-        <textarea
-          id="comments"
-          rows={3}
-          placeholder="How was your food and service today?"
-          className="w-full p-3 text-xs border border-gray-200 rounded-xl focus:ring-1 focus:ring-[#E4002B] focus:border-[#E4002B] outline-none transition-all resize-none"
-          value={feedbackText}
-          onChange={(e) => setFeedbackText(e.target.value)}
-        />
-      </div>
-
-      <Button
-        className="w-full bg-[#E4002B] hover:bg-[#c30025] text-white h-10 text-xs font-bold rounded-xl transition-all"
-        onClick={handleFeedbackSubmit}
-        disabled={!rating}
-      >
-        Submit Feedback
-      </Button>
-
-      <p className="text-[10px] text-center text-gray-400 font-medium">
-        Your feedback helps us serve you better.
-      </p>
-    </div>
-  )}
-</div>
           
-          {/* KFC India Offers */}
-<div className="bg-white rounded-lg border border-gray-200 p-4 font-poppins">
+      {/* Malabar Services & Promise */}
+<div className="bg-white rounded-xl border border-[#ecd9e4] p-4 font-poppins shadow-sm">
 
   <div className="flex items-center justify-between mb-4">
-    <h3 className="text-base font-bold text-gray-900 flex items-center">
-      <Sparkles className="mr-2 h-4 w-4 text-[#E4002B]" />
-      Exclusive Offers for You
+    <h3 className="text-base font-bold text-[#682A49] flex items-center">
+      <Sparkles className="mr-2 h-4 w-4 text-[#CE187D]" />
+      Malabar Promise
     </h3>
 
-    <span className="text-[10px] font-bold text-[#E4002B] uppercase tracking-tight">
-      KFC Deals
+    <span className="text-[10px] font-bold text-[#CE187D] uppercase tracking-tight">
+      Trusted Jewellery
     </span>
   </div>
 
+
+  {/* Bridal Assistance Banner */}
+  <a
+    href="https://www.malabargoldanddiamonds.com/in/pan-india/en/book-an-appointment.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block mb-4 rounded-xl overflow-hidden border border-[#ecd9e4]"
+  >
+    <Image
+      src="/images/design-mode/bride-assistance.png"
+      alt="Malabar Bridal Assistance"
+      width={1200}
+      height={500}
+      className="w-full h-auto object-cover"
+    />
+  </a>
+
+
+  {/* Promise Points */}
   <div className="space-y-3">
 
-    {/* Offer 1 */}
-    <div className="border border-gray-100 rounded-xl overflow-hidden shadow-sm">
-      <div className="bg-[#E4002B] text-white text-center py-3 px-3">
-        <div className="text-xs font-bold uppercase tracking-wide">
-          First Order Special
-        </div>
-        <div className="text-lg font-extrabold mt-1">
-          FREE CLASSIC ZINGER
-        </div>
+    {/* Transparency */}
+    <div className="flex items-start gap-3 bg-[#F7F2F5] p-3 rounded-lg border border-[#ecd9e4]">
+      <div className="w-7 h-7 rounded-full bg-[#CE187D]/10 flex items-center justify-center text-[#CE187D] text-xs font-bold">
+        ✓
       </div>
 
-      <div className="p-3 text-center">
-        <div className="text-xs text-gray-500 mb-3">
-          Min. Order Value ₹499
+      <div>
+        <div className="text-xs font-semibold text-[#682A49]">
+          Complete Transparency
         </div>
-
-        <a
-          href="https://online.kfc.co.in/offers"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full bg-black text-white text-xs font-bold py-2 rounded-full"
-        >
-          Apply Offer
-        </a>
+        <div className="text-[11px] text-gray-500">
+          Detailed invoice showing gross weight, stone weight and net gold weight for every jewellery piece.
+        </div>
       </div>
     </div>
 
 
-    {/* Offer 2 */}
-    <div className="border border-gray-100 rounded-xl overflow-hidden shadow-sm">
-      <div className="bg-[#E4002B] text-white text-center py-3 px-3">
-        <div className="text-xs font-bold uppercase tracking-wide">
-          Limited Deal
-        </div>
-        <div className="text-lg font-extrabold mt-1">
-          2 PC HOT & CRISPY @ ₹99
-        </div>
+    {/* Lifetime Maintenance */}
+    <div className="flex items-start gap-3 bg-[#F7F2F5] p-3 rounded-lg border border-[#ecd9e4]">
+      <div className="w-7 h-7 rounded-full bg-[#CE187D]/10 flex items-center justify-center text-[#CE187D] text-xs font-bold">
+        ✓
       </div>
 
-      <div className="p-3 text-center">
-        <div className="text-xs text-gray-500 mb-3">
-          Min. Order Value ₹499
+      <div>
+        <div className="text-xs font-semibold text-[#682A49]">
+          Assured Lifetime Maintenance
         </div>
-
-        <a
-          href="https://online.kfc.co.in/offers"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full bg-black text-white text-xs font-bold py-2 rounded-full"
-        >
-          Apply Offer
-        </a>
+        <div className="text-[11px] text-gray-500">
+          Complimentary lifetime maintenance available at any of our 410+ showrooms across 14 countries.
+        </div>
       </div>
     </div>
 
 
-    {/* Offer 3 */}
-    <div className="border border-gray-100 rounded-xl overflow-hidden shadow-sm">
-      <div className="bg-[#E4002B] text-white text-center py-3 px-3">
-        <div className="text-xs font-bold uppercase tracking-wide">
-          Special Discount
-        </div>
-        <div className="text-lg font-extrabold mt-1">
-          UPTO ₹100 OFF
-        </div>
+    {/* Hallmark Gold */}
+    <div className="flex items-start gap-3 bg-[#F7F2F5] p-3 rounded-lg border border-[#ecd9e4]">
+      <div className="w-7 h-7 rounded-full bg-[#CE187D]/10 flex items-center justify-center text-[#CE187D] text-xs font-bold">
+        ✓
       </div>
 
-      <div className="p-3 text-center">
-        <div className="text-xs text-gray-500 mb-3">
-          Min. Order Value ₹699
+      <div>
+        <div className="text-xs font-semibold text-[#682A49]">
+          BIS 916 Hallmarked Pure Gold
         </div>
+        <div className="text-[11px] text-gray-500">
+          All gold jewellery is guaranteed with 100% HUID hallmarking for certified purity.
+        </div>
+      </div>
+    </div>
 
-        <a
-          href="https://online.kfc.co.in/offers"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full bg-black text-white text-xs font-bold py-2 rounded-full"
-        >
-          Apply Offer
-        </a>
+
+    {/* Natural Diamonds */}
+    <div className="flex items-start gap-3 bg-[#F7F2F5] p-3 rounded-lg border border-[#ecd9e4]">
+      <div className="w-7 h-7 rounded-full bg-[#CE187D]/10 flex items-center justify-center text-[#CE187D] text-xs font-bold">
+        ✓
+      </div>
+
+      <div>
+        <div className="text-xs font-semibold text-[#682A49]">
+          Certified Natural Diamonds
+        </div>
+        <div className="text-[11px] text-gray-500">
+          Every diamond undergoes 28 strict quality checks before reaching our customers.
+        </div>
       </div>
     </div>
 
   </div>
-
-  <p className="mt-4 text-[9px] text-center text-gray-400 font-medium italic">
-    *Offers may vary by location. T&Cs apply.
-  </p>
 
 </div>
           
