@@ -37,6 +37,7 @@ interface Receipt {
   date: string
   time: string
   associate: string
+  branch: string
   items: Array<{
     id: number
     name: string
@@ -44,13 +45,14 @@ interface Receipt {
     price: number
     quantity: number
     category?: string
-    taxApplicable?: boolean
-    baseAmount?: number
-    tax?: number
     itemCode?: string
-    size?: string
-    color?: string
-    material?: string
+    purity?: string
+    metalColor?: string
+    netWeight?: number
+    makingCharges?: number
+    stoneValue?: number
+    goldValue?: number
+    tax?: number
   }>
   subtotal: number
   tax: number
@@ -143,141 +145,123 @@ export default function Home() {
   }, [promoApi])
 
   const receipts = {
+
   current: {
-    id: "KFC-CP-DEL-71922864",
-    date: "07-11-2025",
-    time: "19:22:18",
-    associate: "Rahul Verma",
-    branch: "Connaught Place",
+    id: "MAL-SND-72819341",
+    date: "12-11-2025",
+    time: "18:42:11",
+    associate: "Anjali Mehta",
+    branch: "Malabar Gold & Diamonds Sendhwa",
     items: [
       {
         id: 0,
-        name: "2 Pc Hot & Crispy Chicken Meal",
-        size: "Regular Meal",
-        description: "2 Pc Hot & Crispy Chicken, Regular Fries, Pepsi",
-        price: 229,
+        name: "Stately Viridescent Generic Gold Necklace",
+        description: "22Kt gold necklace with classic yellow gold finish",
+        price: 81998,
         quantity: 1,
-        category: "Meals",
-        taxApplicable: true,
-        baseAmount: 218.10,
-        tax: 10.90,
-        itemCode: "MEAL001",
-        type: "Hot & Crispy",
+        category: "Necklace",
+        itemCode: "NK-290635",
+        purity: "22Kt",
+        metalColor: "Gold",
+        goldValue: 68100.76,
+        makingCharges: 11509.03,
+        tax: 2388.29
       },
       {
         id: 1,
-        name: "Zinger Burger",
-        size: "Single Patty",
-        description: "Spicy chicken fillet burger with lettuce and mayo",
-        price: 199,
+        name: "Avant-garde Gold Earrings",
+        description: "18Kt pink gold earrings with cubic zirconia stones",
+        price: 44036,
         quantity: 1,
-        category: "Burgers",
-        taxApplicable: true,
-        baseAmount: 189.52,
-        tax: 9.48,
-        itemCode: "B001",
-        type: "Spicy",
-      },
-      {
-        id: 2,
-        name: "French Fries",
-        size: "Regular",
-        description: "Golden crispy salted fries",
-        price: 109,
-        quantity: 1,
-        category: "Sides",
-        taxApplicable: true,
-        baseAmount: 103.81,
-        tax: 5.19,
-        itemCode: "S001",
-        flavor: "Salted",
-      },
+        category: "Earrings",
+        itemCode: "ER-083113",
+        purity: "18Kt",
+        metalColor: "Pink",
+        netWeight: 2.92,
+        goldValue: 33734.76,
+        stoneValue: 248,
+        makingCharges: 8771.04,
+        tax: 1282.61
+      }
     ],
-    subtotal: 511.43,
-    tax: 25.57,
-    total: 537,
+    subtotal: 120463.59,
+    tax: 3670.90,
+    total: 126034
   },
 
   hist1: {
-    id: "KFC-BKC-MUM-86448317",
-    date: "20-10-2025",
-    time: "14:22:18",
-    associate: "Sneha Iyer",
-    branch: "BKC Mumbai",
+    id: "MAL-SND-72819322",
+    date: "02-11-2025",
+    time: "15:14:52",
+    associate: "Rohit Nair",
+    branch: "Malabar Gold & Diamonds Sendhwa",
     items: [
       {
         id: 0,
-        name: "5 Pc Hot & Crispy Bucket",
-        size: "5-Piece Bucket",
-        description: "5 pieces of signature Hot & Crispy chicken",
-        price: 549,
+        name: "Plush Diamond Pendant",
+        description: "18Kt rose gold pendant with VVS-VS GH diamonds",
+        price: 36377,
         quantity: 1,
-        category: "Sharing",
-        taxApplicable: true,
-        baseAmount: 522.86,
-        tax: 26.14,
-        itemCode: "SHR005",
-        type: "Hot & Crispy",
+        category: "Pendant",
+        itemCode: "PD-200173",
+        purity: "18Kt",
+        metalColor: "Rose Gold",
+        netWeight: 2.166,
+        goldValue: 25023.8,
+        stoneValue: 4337.4,
+        makingCharges: 5956.5,
+        tax: 1059.53
       },
       {
         id: 1,
-        name: "Chocolate Lava Cake",
-        size: "Single",
-        description: "Warm chocolate lava dessert",
-        price: 109,
-        quantity: 2,
-        category: "Dessert",
-        taxApplicable: true,
-        baseAmount: 207.62,
-        tax: 10.38,
-        itemCode: "D001",
-        flavor: "Chocolate",
-      },
+        name: "Everyday Luxury Gold Necklace",
+        description: "22Kt matte finish yellow gold necklace",
+        price: 142744,
+        quantity: 1,
+        category: "Necklace",
+        itemCode: "NK-284618",
+        purity: "22Kt",
+        metalColor: "Yellow",
+        netWeight: 8.396,
+        goldValue: 118551.52,
+        makingCharges: 20035.21,
+        tax: 4157.6
+      }
     ],
-    subtotal: 730.48,
-    tax: 36.52,
-    total: 767,
+    subtotal: 173567.02,
+    tax: 5217.13,
+    total: 179121
   },
 
   hist2: {
-    id: "KFC-ORION-BLR-86448316",
-    date: "15-10-2025",
-    time: "12:45:33",
-    associate: "Arjun Nair",
-    branch: "Orion Mall Bengaluru",
+    id: "MAL-SND-72819284",
+    date: "26-10-2025",
+    time: "12:32:09",
+    associate: "Priya Shah",
+    branch: "Malabar Gold & Diamonds Sendhwa",
     items: [
       {
         id: 0,
-        name: "Zinger Meal",
-        size: "Regular Meal",
-        description: "Zinger Burger, Fries, and Pepsi",
-        price: 299,
+        name: "Ethereal Gold Mangalsutra",
+        description: "22Kt yellow gold mangalsutra with black beads and kundan",
+        price: 255062,
         quantity: 1,
-        category: "Meals",
-        taxApplicable: true,
-        baseAmount: 284.76,
-        tax: 14.24,
-        itemCode: "MEAL009",
-      },
-      {
-        id: 1,
-        name: "Chicken Nuggets",
-        size: "6-Piece",
-        description: "Crispy chicken nuggets",
-        price: 149,
-        quantity: 2,
-        category: "Snacks",
-        taxApplicable: true,
-        baseAmount: 283.81,
-        tax: 14.19,
-        itemCode: "SNK002",
-        sauce: "BBQ Sauce",
-      },
+        category: "Mangalsutra",
+        itemCode: "MS-279084",
+        purity: "22Kt",
+        metalColor: "Yellow",
+        netWeight: 14.288,
+        goldValue: 201746.56,
+        stoneValue: 1704.01,
+        makingCharges: 44182.5,
+        tax: 7428.99
+      }
     ],
-    subtotal: 568.57,
-    tax: 28.43,
-    total: 597,
-  },
+    subtotal: 247633.07,
+    tax: 7428.99,
+    total: 255062
+  }
+
 };
 
   const currentReceipt = receipts[currentReceiptId]
@@ -754,22 +738,24 @@ Powered by RDEP
         className="w-full max-w-md mx-auto bg-white shadow-lg relative overflow-hidden"
       >
         <div className="flex flex-col w-full gap-3 pb-4 px-3">
-          {/* Top Section - Row 1: Logo left, QR right */}
-<div className="bg-white rounded-lg border border-gray-200 p-4 mt-3 font-poppins">
+          {/* Top Section - Malabar Premium Header */}
 
+<div className="bg-white rounded-xl border border-[#e8e3ea] p-5 mt-3 font-poppins shadow-sm">
+
+  {/* Row 1 - Logo + QR */}
   <div className="flex items-center justify-between">
 
-    {/* KFC Logo */}
+    {/* Malabar Logo */}
     <div className="flex items-center">
       <img
-        src="/images/design-mode/KFC_logo.png"
-        alt="KFC"
-        className="h-24 w-auto object-contain"
+        src="/images/design-mode/NewMalabarLogoDesktop.svg"
+        alt="Malabar Gold & Diamonds"
+        className="h-20 w-auto object-contain"
       />
     </div>
 
     {/* QR Code */}
-    <div className="bg-gray-100 p-2 rounded-md border border-gray-200">
+    <div className="bg-[#F7F4F6] p-2.5 rounded-lg border border-[#e8e3ea]">
       <Image
         src="/images/design-mode/qr-code.jpg"
         alt="Scan QR"
@@ -781,47 +767,63 @@ Powered by RDEP
 
   </div>
 
+
   {/* Greeting + Total */}
   <div className="flex items-center justify-between mt-6">
 
-    <div className="bg-[#E4002B] px-5 py-2.5 rounded-full flex items-center shadow-md">
+    {/* Greeting */}
+    <div className="bg-gradient-to-r from-[#4F0334] to-[#8C5A7A] px-5 py-2.5 rounded-full flex items-center shadow-md">
+
       <User2 className="h-5 w-5 mr-2 text-white" />
-      <span className="text-sm font-bold text-white tracking-tight">
-        Hi {customerName}
+
+      <span className="text-sm font-semibold text-white tracking-tight">
+        Welcome, {customerName}
       </span>
+
     </div>
 
-    <div className="bg-white border-2 border-[#E4002B] px-4 py-2 rounded-xl text-right">
-      <div className="text-[10px] font-semibold text-gray-400 uppercase leading-none mb-1">
+
+    {/* Total Paid */}
+    <div className="bg-white border border-[#4F0334]/30 px-5 py-2.5 rounded-xl text-right shadow-sm">
+
+      <div className="text-[10px] font-semibold text-gray-400 uppercase tracking-widest mb-1">
         Total Paid
       </div>
 
-      <div className="text-sm font-bold text-[#E4002B] leading-none">
-        ₹{currentReceipt.total.toFixed(2)}
+      <div className="text-lg font-bold text-[#4F0334] leading-none">
+        ₹{currentReceipt.total.toLocaleString()}
       </div>
+
     </div>
 
   </div>
 
-  {/* Receipt ID + Date */}
+
+  {/* Receipt Info */}
   <div className="grid grid-cols-2 gap-4 mt-5">
 
-    <div className="bg-gray-50 p-3 rounded-xl border border-gray-100 shadow-sm">
-      <div className="text-[10px] text-gray-400 font-extrabold uppercase tracking-widest mb-1">
+    {/* Receipt ID */}
+    <div className="bg-[#F7F4F6] p-3 rounded-xl border border-[#e8e3ea]">
+
+      <div className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">
         Receipt ID
       </div>
 
-      <div className="text-xs font-mono font-bold text-gray-800 tracking-tight">
+      <div className="text-xs font-mono font-semibold text-[#4F0334]">
         {currentReceipt.id}
       </div>
+
     </div>
 
-    <div className="bg-gray-50 p-3 rounded-xl border border-gray-100 shadow-sm">
-      <div className="text-[10px] text-gray-400 font-extrabold uppercase tracking-widest mb-1">
+
+    {/* Date Time */}
+    <div className="bg-[#F7F4F6] p-3 rounded-xl border border-[#e8e3ea]">
+
+      <div className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">
         Date & Time
       </div>
 
-      <div className="text-xs font-bold text-gray-800">
+      <div className="text-xs font-semibold text-gray-700">
         {currentReceipt.date}
         <span className="text-gray-300 mx-1">|</span>
         {currentReceipt.time}
