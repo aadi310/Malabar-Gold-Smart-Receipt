@@ -1076,76 +1076,113 @@ Powered by RDEP
 
 </div>
           
-          {/* KFC Rewards Loyalty Section */}
-<div className="bg-white rounded-lg border border-gray-200 p-3 font-poppins">
+          {/* Malabar Privilege Rewards */}
+<div className="bg-white rounded-lg border border-[#ecd9e4] p-3 font-poppins">
+
   <div className="flex items-center justify-between mb-3">
-    <h3 className="text-base font-semibold flex items-center text-[#E4002B]">
-      <div className="bg-[#E4002B] text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px] mr-2 shadow-sm">
-        🍗
+
+    <h3 className="text-base font-semibold flex items-center text-[#682A49]">
+      <div className="bg-[#CE187D] text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px] mr-2 shadow-sm">
+        ♦
       </div>
-      KFC Rewards
+      Malabar Privilege
     </h3>
-    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">India</span>
+
+    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+      Member
+    </span>
+
   </div>
+
 
   <div className="grid grid-cols-3 gap-3 mb-4">
 
     {/* Points Earned */}
     <div className="text-center p-2 bg-gray-50 rounded-xl border border-gray-100">
+
       <div className="text-lg font-bold text-gray-900">
-        {Math.floor(currentReceipt.total / 10)}
+        {Math.floor(currentReceipt.total / 100)}
       </div>
-      <div className="text-[10px] font-medium text-gray-500 uppercase">Points Earned</div>
+
+      <div className="text-[10px] font-medium text-gray-500 uppercase">
+        Points Earned
+      </div>
+
     </div>
 
+
     {/* Total Balance */}
-    <div className="text-center p-2 bg-[#E4002B]/5 rounded-xl border border-[#E4002B]/10">
-      <div className="text-lg font-bold text-[#E4002B]">1,820</div>
-      <div className="text-[10px] font-medium text-[#E4002B] uppercase">Total Points</div>
+    <div className="text-center p-2 bg-[#CE187D]/5 rounded-xl border border-[#CE187D]/10">
+
+      <div className="text-lg font-bold text-[#CE187D]">
+        3,240
+      </div>
+
+      <div className="text-[10px] font-medium text-[#CE187D] uppercase">
+        Total Points
+      </div>
+
     </div>
+
 
     {/* Expiring */}
     <div className="text-center p-2 bg-gray-50 rounded-xl border border-gray-100">
-      <div className="text-lg font-bold text-gray-900">120</div>
-      <div className="text-[10px] font-medium text-gray-500 uppercase">Expiring Soon</div>
+
+      <div className="text-lg font-bold text-gray-900">
+        420
+      </div>
+
+      <div className="text-[10px] font-medium text-gray-500 uppercase">
+        Expiring Soon
+      </div>
+
     </div>
 
   </div>
 
-  {/* Reward Progress */}
+
+  {/* Progress */}
   <div className="space-y-2">
+
     <div className="relative w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
-      <div className="absolute top-0 left-0 h-full bg-[#E4002B] w-2/3 rounded-full" />
+      <div className="absolute top-0 left-0 h-full bg-[#CE187D] w-3/5 rounded-full" />
     </div>
+
     <div className="flex justify-between items-center px-1">
+
       <span className="text-[10px] font-medium text-gray-400">
-        Next Reward: 200 pts
+        Next Reward: 4000 pts
       </span>
-      <span className="text-[10px] font-bold text-[#E4002B]">
-        65% to Free Fries
+
+      <span className="text-[10px] font-bold text-[#CE187D]">
+        62% to ₹1000 Voucher
       </span>
+
     </div>
+
   </div>
+
 
   <div className="mt-4 grid grid-cols-2 gap-2">
 
     <div className="flex items-center text-[10px] font-medium text-gray-600 bg-gray-50 px-2 py-1.5 rounded-md">
-      <span className="text-[#E4002B] mr-1.5 text-xs">✓</span> ₹100 = 10 Points
+      <span className="text-[#CE187D] mr-1.5 text-xs">✓</span> ₹1000 = 10 Points
     </div>
 
     <div className="flex items-center text-[10px] font-medium text-gray-600 bg-gray-50 px-2 py-1.5 rounded-md">
-      <span className="text-[#E4002B] mr-1.5 text-xs">✓</span> Birthday Rewards
+      <span className="text-[#CE187D] mr-1.5 text-xs">✓</span> Birthday Vouchers
     </div>
 
     <div className="flex items-center text-[10px] font-medium text-gray-600 bg-gray-50 px-2 py-1.5 rounded-md">
-      <span className="text-[#E4002B] mr-1.5 text-xs">✓</span> App Exclusive Deals
+      <span className="text-[#CE187D] mr-1.5 text-xs">✓</span> Free Jewellery Cleaning
     </div>
 
     <div className="flex items-center text-[10px] font-medium text-gray-600 bg-gray-50 px-2 py-1.5 rounded-md">
-      <span className="text-[#E4002B] mr-1.5 text-xs">✓</span> Free Sides & Upgrades
+      <span className="text-[#CE187D] mr-1.5 text-xs">✓</span> Exclusive Collection Access
     </div>
 
   </div>
+
 </div>
           
           {/* Full Width Banner Section */}
