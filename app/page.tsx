@@ -740,86 +740,74 @@ Powered by RDEP
         <div className="flex flex-col w-full gap-3 pb-4 px-3">
           {/* Top Section - Malabar Premium Header */}
 
-<div className="bg-white rounded-xl border border-[#e8e3ea] p-5 mt-3 font-poppins shadow-sm">
+<div className="rounded-xl border border-[#ecd9e4] mt-3 font-poppins overflow-hidden shadow-sm">
 
-  {/* Row 1 - Logo + QR */}
-  <div className="flex items-center justify-between">
+  {/* Gradient Header */}
+  <div className="bg-gradient-to-r from-[#CE187D] via-[#C92C83] to-[#682A49] p-5">
 
-    {/* Malabar Logo */}
-    <div className="flex items-center">
+    <div className="flex items-center justify-between">
+
+      {/* Logo */}
       <img
         src="/images/design-mode/Malabar-Gold-Logo.jpg"
         alt="Malabar Gold & Diamonds"
-        className="h-20 w-auto object-contain"
+        className="h-16 w-auto object-contain"
       />
-    </div>
 
-    {/* QR Code */}
-    <div className="bg-[#F7F4F6] p-2.5 rounded-lg border border-[#e8e3ea]">
-      <Image
-        src="/images/design-mode/qr-code.jpg"
-        alt="Scan QR"
-        width={64}
-        height={64}
-        className="object-contain"
-      />
-    </div>
-
-  </div>
-
-
-  {/* Greeting + Total */}
-  <div className="flex items-center justify-between mt-6">
-
-    {/* Greeting */}
-    <div className="bg-gradient-to-r from-[#4F0334] to-[#8C5A7A] px-5 py-2.5 rounded-full flex items-center shadow-md">
-
-      <User2 className="h-5 w-5 mr-2 text-white" />
-
-      <span className="text-sm font-semibold text-white tracking-tight">
-        Welcome, {customerName}
-      </span>
-
-    </div>
-
-
-    {/* Total Paid */}
-    <div className="bg-white border border-[#4F0334]/30 px-5 py-2.5 rounded-xl text-right shadow-sm">
-
-      <div className="text-[10px] font-semibold text-gray-400 uppercase tracking-widest mb-1">
-        Total Paid
+      {/* QR */}
+      <div className="bg-white/15 backdrop-blur-sm p-2 rounded-md border border-white/20">
+        <Image
+          src="/images/design-mode/qr-code.jpg"
+          alt="Scan QR"
+          width={64}
+          height={64}
+          className="object-contain"
+        />
       </div>
 
-      <div className="text-lg font-bold text-[#4F0334] leading-none">
-        ₹{currentReceipt.total.toLocaleString()}
+    </div>
+
+    {/* Greeting + Total */}
+    <div className="flex items-center justify-between mt-6">
+
+      <div className="bg-white/15 backdrop-blur-sm px-5 py-2.5 rounded-full flex items-center">
+        <User2 className="h-5 w-5 mr-2 text-white" />
+        <span className="text-sm font-semibold text-white">
+          Welcome, {customerName}
+        </span>
+      </div>
+
+      <div className="bg-white px-5 py-2 rounded-xl text-right shadow">
+
+        <div className="text-[10px] font-semibold text-gray-400 uppercase tracking-widest">
+          Total Paid
+        </div>
+
+        <div className="text-lg font-bold text-[#682A49]">
+          ₹{currentReceipt.total.toLocaleString()}
+        </div>
+
       </div>
 
     </div>
 
   </div>
 
+  {/* Receipt info section */}
+  <div className="grid grid-cols-2 gap-4 p-4 bg-[#F7F2F5]">
 
-  {/* Receipt Info */}
-  <div className="grid grid-cols-2 gap-4 mt-5">
-
-    {/* Receipt ID */}
-    <div className="bg-[#F7F4F6] p-3 rounded-xl border border-[#e8e3ea]">
-
-      <div className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">
+    <div className="bg-white p-3 rounded-lg border border-[#ecd9e4]">
+      <div className="text-[10px] text-gray-400 uppercase font-bold tracking-widest">
         Receipt ID
       </div>
 
-      <div className="text-xs font-mono font-semibold text-[#4F0334]">
+      <div className="text-xs font-mono font-semibold text-[#682A49]">
         {currentReceipt.id}
       </div>
-
     </div>
 
-
-    {/* Date Time */}
-    <div className="bg-[#F7F4F6] p-3 rounded-xl border border-[#e8e3ea]">
-
-      <div className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">
+    <div className="bg-white p-3 rounded-lg border border-[#ecd9e4]">
+      <div className="text-[10px] text-gray-400 uppercase font-bold tracking-widest">
         Date & Time
       </div>
 
@@ -828,7 +816,6 @@ Powered by RDEP
         <span className="text-gray-300 mx-1">|</span>
         {currentReceipt.time}
       </div>
-
     </div>
 
   </div>
