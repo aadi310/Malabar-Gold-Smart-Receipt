@@ -823,9 +823,10 @@ Powered by RDEP
 
 </div>
           
-          {/* Purchase Details */}
+         {/* Purchase Details */}
 <div className="bg-white rounded-xl border border-[#ecd9e4] p-4 font-poppins">
 
+  {/* Header */}
   <div className="flex items-center justify-between mb-4">
 
     <h3 className="text-base font-semibold flex items-center text-[#682A49]">
@@ -848,7 +849,6 @@ Powered by RDEP
     {currentReceipt.items.map((product) => (
 
       <div key={product.id} className="border border-[#f0e5ec] rounded-lg overflow-hidden">
-
 
         {/* Item Header */}
         <div
@@ -878,7 +878,6 @@ Powered by RDEP
 
           </div>
 
-
           <div className="text-right">
 
             <div className="text-xs text-gray-400">
@@ -894,56 +893,122 @@ Powered by RDEP
         </div>
 
 
-        {/* Expanded Details */}
+        {/* Expanded Item */}
         {expandedProducts.includes(product.id) && (
 
-          <div className="bg-white p-3 border-t border-[#f3e9ef]">
+          <div className="bg-white p-3 border-t border-[#f3e9ef] space-y-3">
 
+            {/* Product Details */}
             <div className="grid grid-cols-2 gap-y-2 gap-x-4 text-[11px] font-medium text-gray-600">
 
-              <div className="flex justify-between border-b border-gray-50 pb-1">
+              <div className="flex justify-between">
                 <span className="text-gray-400">Product Code</span>
                 <span>{product.itemCode}</span>
               </div>
 
-              <div className="flex justify-between border-b border-gray-50 pb-1">
+              <div className="flex justify-between">
                 <span className="text-gray-400">Purity</span>
                 <span>{product.purity}</span>
               </div>
 
               {product.netWeight && (
-                <div className="flex justify-between border-b border-gray-50 pb-1">
+                <div className="flex justify-between">
                   <span className="text-gray-400">Net Weight</span>
                   <span>{product.netWeight} g</span>
                 </div>
               )}
 
-              <div className="flex justify-between border-b border-gray-50 pb-1">
+              <div className="flex justify-between">
                 <span className="text-gray-400">Metal Color</span>
                 <span>{product.metalColor}</span>
               </div>
 
-              <div className="flex justify-between border-b border-gray-50 pb-1">
+            </div>
+
+
+            {/* Price Breakdown */}
+            <div className="border-t border-[#f3e9ef] pt-2 text-[11px] space-y-1">
+
+              <div className="flex justify-between">
                 <span className="text-gray-400">Gold Value</span>
                 <span>₹{product.goldValue?.toLocaleString()}</span>
               </div>
 
               {product.stoneValue && (
-                <div className="flex justify-between border-b border-gray-50 pb-1">
+                <div className="flex justify-between">
                   <span className="text-gray-400">Stone Value</span>
                   <span>₹{product.stoneValue?.toLocaleString()}</span>
                 </div>
               )}
 
-              <div className="flex justify-between border-b border-gray-50 pb-1">
+              <div className="flex justify-between">
                 <span className="text-gray-400">Making Charges</span>
                 <span>₹{product.makingCharges?.toLocaleString()}</span>
               </div>
 
-              <div className="flex justify-between border-b border-gray-50 pb-1">
+              <div className="flex justify-between">
                 <span className="text-gray-400">GST</span>
                 <span>₹{product.tax?.toLocaleString()}</span>
               </div>
+
+            </div>
+
+
+            {/* Item Feedback */}
+            <div className="border-t border-[#f3e9ef] pt-3">
+
+              <button
+                onClick={() => toggleItemFeedback(product.id)}
+                className="text-xs text-[#CE187D] font-medium"
+              >
+                Rate this item
+              </button>
+
+              {expandedItemFeedback.includes(product.id) && (
+
+                <div className="mt-2 space-y-2">
+
+                  {/* Rating Stars */}
+                  <div className="flex space-x-1">
+
+                    {[1,2,3,4,5].map((star) => (
+
+                      <Star
+                        key={star}
+                        className={`h-4 w-4 cursor-pointer ${
+                          (itemRatings[product.id] || 0) >= star
+                            ? "text-yellow-400 fill-yellow-400"
+                            : "text-gray-300"
+                        }`}
+                        onClick={() =>
+                          setItemRatings({
+                            ...itemRatings,
+                            [product.id]: star
+                          })
+                        }
+                      />
+
+                    ))}
+
+                  </div>
+
+                  {/* Feedback Text */}
+                  <textarea
+                    placeholder="Share your feedback..."
+                    className="w-full text-xs border border-gray-200 rounded-md p-2"
+                    rows={2}
+                    value={itemFeedback[product.id] || ""}
+                    onChange={(e) =>
+                      setItemFeedback({
+                        ...itemFeedback,
+                        [product.id]: e.target.value
+                      })
+                    }
+                  />
+
+                </div>
+
+              )}
 
             </div>
 
@@ -954,6 +1019,27 @@ Powered by RDEP
       </div>
 
     ))}
+
+  </div>
+
+
+  {/* Totals Section */}
+  <div className="border-t border-[#ecd9e4] mt-4 pt-3 text-sm space-y-1">
+
+    <div className="flex justify-between text-gray-500">
+      <span>Subtotal</span>
+      <span>₹{currentReceipt.subtotal?.toLocaleString()}</span>
+    </div>
+
+    <div className="flex justify-between text-gray-500">
+      <span>Total GST</span>
+      <span>₹{currentReceipt.taxTotal?.toLocaleString()}</span>
+    </div>
+
+    <div className="flex justify-between font-bold text-[#682A49] text-base pt-1">
+      <span>Total Paid</span>
+      <span>₹{currentReceipt.total?.toLocaleString()}</span>
+    </div>
 
   </div>
 
