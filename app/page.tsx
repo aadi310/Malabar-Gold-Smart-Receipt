@@ -955,6 +955,7 @@ Powered by RDEP
     ))}
 
   </div>
+  }
 
           {/* KFC Rewards Loyalty Section */}
 <div className="bg-white rounded-lg border border-gray-200 p-3 font-poppins">
