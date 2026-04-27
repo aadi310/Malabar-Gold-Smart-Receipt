@@ -748,7 +748,7 @@ Powered by RDEP
     {/* Malabar Logo */}
     <div className="flex items-center">
       <img
-        src="/images/design-mode/NewMalabarLogoDesktop.svg"
+        src="/images/design-mode/Malabar-Gold-Logo.jpg"
         alt="Malabar Gold & Diamonds"
         className="h-20 w-auto object-contain"
       />
