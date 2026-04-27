@@ -1270,36 +1270,47 @@ Powered by RDEP
 </div>
           
          {/* Profile Update Section */}
-<div className="bg-white rounded-lg border border-gray-200 p-4 font-poppins">
+<div className="bg-white rounded-xl border border-[#ecd9e4] p-4 font-poppins shadow-sm">
+
   {profileUpdateSuccess ? (
-    <div className="text-center py-4 bg-green-50/50 rounded-xl border border-green-100">
-      <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-        <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+    <div className="text-center py-4 bg-[#F7F2F5] rounded-xl border border-[#ecd9e4]">
+
+      <div className="w-12 h-12 bg-[#CE187D]/10 rounded-full flex items-center justify-center mx-auto mb-3">
+        <svg className="w-6 h-6 text-[#CE187D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
         </svg>
       </div>
 
-      <div className="text-sm font-bold text-gray-900 mb-1">
+      <div className="text-sm font-bold text-[#682A49] mb-1">
         Profile Updated Successfully
       </div>
 
-      <div className="text-[11px] font-medium text-green-700 uppercase tracking-wider">
-        +100 Rewards Points Added
+      <div className="text-[11px] font-semibold text-[#CE187D] uppercase tracking-wider">
+        +100 Loyalty Points Added
       </div>
+
     </div>
+
   ) : (
+
     <>
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-base font-semibold text-gray-900 flex items-center">
-          <div className="bg-[#E4002B] p-1.5 rounded-lg mr-2.5">
+
+        <h3 className="text-base font-semibold text-[#682A49] flex items-center">
+
+          <div className="bg-[#CE187D] p-1.5 rounded-lg mr-2.5">
             <User2 className="h-4 w-4 text-white" />
           </div>
+
           Complete Your Profile
+
         </h3>
 
-        <Badge className="text-[10px] font-bold bg-[#E4002B] text-white hover:bg-[#E4002B] border-none px-2 py-0.5">
+        <Badge className="text-[10px] font-bold bg-[#CE187D] text-white hover:bg-[#C92C83] border-none px-2 py-0.5">
           +100 PTS
         </Badge>
+
       </div>
 
       <div className="space-y-4">
@@ -1316,7 +1327,7 @@ Powered by RDEP
               placeholder="+91 9XXXXXXXXX"
               value={profile.mobile}
               onChange={(e) => setProfile((prev) => ({ ...prev, mobile: e.target.value }))}
-              className="h-10 text-xs border-gray-200 focus:border-[#E4002B] focus:ring-[#E4002B] rounded-lg"
+              className="h-10 text-xs border-[#ecd9e4] focus:border-[#C92C83] focus:ring-[#C92C83] rounded-lg"
             />
           </div>
 
@@ -1330,13 +1341,14 @@ Powered by RDEP
               placeholder="Your Full Name"
               value={profile.name}
               onChange={(e) => setProfile((prev) => ({ ...prev, name: e.target.value }))}
-              className="h-10 text-xs border-gray-200 focus:border-[#E4002B] focus:ring-[#E4002B] rounded-lg"
+              className="h-10 text-xs border-[#ecd9e4] focus:border-[#C92C83] focus:ring-[#C92C83] rounded-lg"
             />
           </div>
 
         </div>
 
         <div className="space-y-1.5">
+
           <Label htmlFor="email" className="text-[11px] font-bold text-gray-400 uppercase tracking-tight ml-1">
             Email Address
           </Label>
@@ -1347,11 +1359,13 @@ Powered by RDEP
             placeholder="name@example.com"
             value={profile.email}
             onChange={(e) => setProfile((prev) => ({ ...prev, email: e.target.value }))}
-            className="h-10 text-xs border-gray-200 focus:border-[#E4002B] focus:ring-[#E4002B] rounded-lg"
+            className="h-10 text-xs border-[#ecd9e4] focus:border-[#C92C83] focus:ring-[#C92C83] rounded-lg"
           />
+
         </div>
 
         <div className="space-y-1.5">
+
           <Label htmlFor="gender" className="text-[11px] font-bold text-gray-400 uppercase tracking-tight ml-1">
             Gender
           </Label>
@@ -1360,7 +1374,8 @@ Powered by RDEP
             value={profile.gender}
             onValueChange={(value) => setProfile((prev) => ({ ...prev, gender: value }))}
           >
-            <SelectTrigger className="h-10 text-xs border-gray-200 focus:border-[#E4002B] rounded-lg">
+
+            <SelectTrigger className="h-10 text-xs border-[#ecd9e4] focus:border-[#C92C83] rounded-lg">
               <SelectValue placeholder="Select gender" />
             </SelectTrigger>
 
@@ -1371,18 +1386,22 @@ Powered by RDEP
             </SelectContent>
 
           </Select>
+
         </div>
 
         <Button
-          className="w-full bg-[#E4002B] hover:bg-[#c30025] text-white h-11 text-xs font-bold rounded-xl shadow-lg shadow-red-100 transition-all active:scale-[0.98]"
+          className="w-full bg-gradient-to-r from-[#CE187D] to-[#682A49] hover:opacity-90 text-white h-11 text-xs font-bold rounded-xl shadow-lg shadow-pink-100 transition-all active:scale-[0.98]"
           onClick={handleProfileUpdate}
         >
           Update Profile & Earn 100 Points
         </Button>
 
       </div>
+
     </>
+
   )}
+
 </div>
           
           {/* Quick Actions - Feedback Section */}
