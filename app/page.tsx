@@ -163,6 +163,7 @@ export default function Home() {
         category: "Necklace",
         itemCode: "NK-290635",
         purity: "22Kt",
+        netWeight: "4.82g",
         metalColor: "Gold",
         goldValue: 68100.76,
         makingCharges: 11509.03,
